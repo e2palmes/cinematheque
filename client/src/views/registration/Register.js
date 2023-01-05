@@ -5,7 +5,7 @@ import {CheckBoxField} from "../../components/CheckBox/CheckBoxField";
 
 function Register(){
     return (
-            <div className="mx-5 py-12 my-0 flex flex-col items-center ml-auto">
+        <div className="mx-5 py-12 my-0 flex flex-col items-center">
             <section className="py-6 px-20">
                 {/* document title */}
                 <h1 className="text-5xl mb-8 font-extrabold ">
