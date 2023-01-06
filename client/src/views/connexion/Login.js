@@ -8,7 +8,7 @@ import {FormApple} from "../../components/buttons/FormApple";
 import {FormConnexion} from "../../components/buttons/FormConnexion";
 //import footer
 
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/footer/Footer";
 
 
 
