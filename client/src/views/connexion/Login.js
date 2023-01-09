@@ -1,4 +1,3 @@
-
 //import components
 import { TextFieldLarge } from "../../components/forms/TextField/TextFieldLarge";
 import { FormFacebook } from "../../components/buttons/FormFacebook";
@@ -42,7 +41,6 @@ function Login() {
     return (
         <div className="mx-5 py-12 my-0 flex flex-col items-center">
             <section className="py-6 px-20">
-                {/* document title */}
                 <h1 className="text-5xl mb-8 font-extrabold ">
                     Connexion
                 </h1>
