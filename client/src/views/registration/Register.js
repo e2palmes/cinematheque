@@ -130,7 +130,7 @@ function Register(){
                         </p>
                     </div>
                 </form>
-            </section><br/><br/> 
+            </section><br/><br/>
             <footer>
                 <Footer/>
             </footer>
