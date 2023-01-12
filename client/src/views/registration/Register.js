@@ -4,6 +4,7 @@ import {FormSubmit} from "../../components/buttons/FormSubmit";
 import {CheckBoxField} from "../../components/forms/CheckBox/CheckBoxField";
 import {initialValues, validate} from "../../services/constants/registration/Constants"
 import {useState, useEffect} from "react";
+import Footer from "../../components/footer/Footer";
 
 function Register(){
 
@@ -61,21 +62,21 @@ function Register(){
                         {/* first name and last name section*/}
                         <div className="flex justify-between flex-wrap">
                             <TextFieldMedium label={"Prénom"}
-                                             type={"text"}
-                                             placeholder={"Entrer votre prénom"}
-                                             name={"first_name"}
-                                             values={userValues.first_name}
-                                             formError={formError.first_name}
-                                             handleChange={handleChange}
+                                                type={"text"}
+                                                placeholder={"Entrer votre prénom"}
+                                                name={"first_name"}
+                                                values={userValues.first_name}
+                                                formError={formError.first_name}
+                                                handleChange={handleChange}
 
                             />
                             <TextFieldMedium label={"Nom"}
-                                             type={"text"}
-                                             placeholder={"Entrer votre nom"}
-                                             name={"last_name"}
-                                             values={userValues.last_name}
-                                             formError={formError.last_name}
-                                             handleChange={handleChange}
+                                                type={"text"}
+                                                placeholder={"Entrer votre nom"}
+                                                name={"last_name"}
+                                                values={userValues.last_name}
+                                                formError={formError.last_name}
+                                                handleChange={handleChange}
 
                             />
 
@@ -129,7 +130,10 @@ function Register(){
                         </p>
                     </div>
                 </form>
-            </section>
+            </section><br/><br/>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     );
 }
