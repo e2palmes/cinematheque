@@ -1,0 +1,16 @@
+{
+  "web":{
+  "client_id":"955538355623-dok0i9d3ndq8ruds7k3av7qgjurc5clj.apps.googleusercontent.com",
+  "project_id":"cinematheque-374409",
+  "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+  "token_uri":"https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+  "client_secret":"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",
+  "redirect_uris":
+                ["http://localhost","http://localhost:3000"],
+  "javascript_origins":
+                    ["http://localhost","http://localhost:3000"
+
+                    ]
+      }
+}
