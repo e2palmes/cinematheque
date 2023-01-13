@@ -1,0 +1,17 @@
+.buttons {
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1px;
+  padding-left: 1px;
+  font-family: Poppins, Arial;
+  font-size: .688rem;
+  font-weight: 600;
+  line-height: 17px;
+  display: flex;
+}
