@@ -1,4 +1,3 @@
-import './assets/App.css';
 import Register from "./views/registration/Register";
 import Login from "./views/connexion/Login";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";

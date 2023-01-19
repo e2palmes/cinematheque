@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../../assets/Buttons.css";
+import "../../assets/CSS/Buttons.css";
 const Buttons = (props) => {
   return (
     <button className={`buttons ${props.className || ""}`}>

@@ -1,29 +1,41 @@
 import {Link} from "react-router-dom";
 import  react from "react";
-import rectangle1158 from "../../assets/rectangle1158.svg";
-import logo from "../../assets/logo.png";
-import  App from  "../../assets/App.css";
-import partieHotFilmsDu from "../../assets/partieHotFilmsDu.svg";
+import rectangle1158 from "../../assets/images/rectangle1158.svg";
+import logo from "../../assets/images/logo.png";
+import index from "../../assets/CSS/index.css";
+//import partieHotFilmsDu from "../../assets/partieHotFilmsDu.svg";
 export const Home = (props)=>{
 
 
     return (
-        <div className="page-dacceuil">
-            <div className="navbar">
-                <div className="navbar-9">
+        <div className="text-white w-full h-full bg-white flex-col justify-between
+                                        items-center pb-4 text-xs font-semibold leading-4 flex">
+
+            <div className="text-white w-full h-full bg-black flex-row justify-start
+                                        items-stretch text-xs font-semibold leading-3 flex">
+
+                <div className="h-full bg-black flex-row justify-between items-center pl-6 pr-2 flex">
                     <Link to="/">
-                        <img className="rectangle-9" src={logo} />
+                        <img className="w-24 h-20 object-cover bg-center bg-cover" src={logo} />
 
                     </Link>
-                    <Link to="tops shows" className="tops-shows">tops shows</Link>
-                    <Link to="tops stars" className="tops-stars">tops stars</Link>
-                    <Link to="Ma liste" className="ma-liste">Ma liste</Link>
-                    <div className="rectangle-1157">
-                        <span className="recherche">recherche</span>
-                        <img className="rectangle-1158" src={rectangle1158} />
+                    <Link to="tops shows" className="mt-1 text-sm">tops shows</Link>
+                    <Link to="tops stars" className="mt-1 text-sm">tops stars</Link>
+                    <Link to="Ma liste" className="mt-1 text-sm">Ma liste</Link>
+                    <div className="text-gray-400 flex-row justify-between items-center mb-1 ml-16 pl-3 font-light flex">
+                        <span className="mt-0">recherche</span>
+                        <img className="w-10 h-8 object-cover" src={rectangle1158} />
                     </div>
-                    <Link to="/Login" className="button">Connectez vous</Link>
-                    <Link to="/Register" className="button-1">Créer un compte</Link>
+                    <Link to="/Login" className="text-center w-32 rounded-lg text-sm leading-3 flex-row justify-center
+                                    items-center mb-0 ml-3 pt-2 pb-2 pl-6 pr-6 font-medium flex">
+                                    Connectez vous
+                    </Link>
+
+                    <Link to="/Register" className="text-center w-32 rounded-lg text-sm leading-3 flex-row justify-center
+                                    items-center mb-0 ml-3 pt-2 pb-2 pl-6 pr-6 font-medium flex">
+                                    Créer un compte
+                    </Link>
+
                 </div>
             </div>
 
