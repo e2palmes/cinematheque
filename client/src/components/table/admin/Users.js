@@ -1,6 +1,9 @@
-import {usersData} from "./constants";
+import {useState} from "react";
+import {useSelector} from "react-redux";
+
 
 export const UsersTable = ({handleDelete})=>{
+    const {allUsers} = useSelector((state)=> state.users)
     return (
         <div>
             <table className="table-auto w-full text-left">
@@ -15,11 +18,11 @@ export const UsersTable = ({handleDelete})=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                      usersData.map((data)=>{
+                    {allUsers &&
+                      allUsers.map((data)=>{
                           const {id,lastname,firstname,username,email} = data;
                           return (
-                              <tr>
+                              <tr key={id}>
                                 <td className="px-6 py-4">{id}</td>
                                 <td className="px-6 py-4">{lastname}</td>
                                 <td className="px-6 py-4">{firstname}</td>

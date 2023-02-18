@@ -1,6 +1,8 @@
 import {actorsData} from "./constants";
+import {useSelector} from "react-redux";
 
-export const ActorsTable = ({handleDelete,handleUpdate})=>{
+export const ActorsTable = ({handleDelete, handleUpdate})=>{
+     const {allActors} = useSelector((state)=>state.actors)
     return (
         <div>
             <table className="table-auto w-full text-left">
@@ -13,11 +15,12 @@ export const ActorsTable = ({handleDelete,handleUpdate})=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                      actorsData.map((data)=>{
+                    { allActors &&
+                      allActors.map((data)=>{
                           const {id,lastname,firstname} = data;
-                          return (
-                              <tr>
+
+                              return (
+                              <tr key={id}>
                                 <td className="px-6 py-4">{id}</td>
                                 <td className="px-6 py-4">{lastname}</td>
                                 <td className="px-6 py-4">{firstname}</td>

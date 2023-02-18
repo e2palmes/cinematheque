@@ -10,8 +10,11 @@ import {actorInitialValues, validateActor} from "../../services/constants/admin/
 import {Button} from "../../components/buttons/Button";
 import {Link} from "react-router-dom";
 
+
+
 export const AdminActors =()=>{
     const [search,setSearch] = useState();
+
     const handleSearch = (e)=>{
         e.preventDefault();
         console.log(search);
@@ -24,6 +27,7 @@ export const AdminActors =()=>{
     const handleUpdate = ()=>{
         console.log("updated");
     }
+
     return (
         <div className="flex space-x-3 items-start py-12">
             <AdminSidebar/>

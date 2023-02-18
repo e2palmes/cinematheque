@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1/users")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class UserController {
 
     private final UserRepository userRepository;
