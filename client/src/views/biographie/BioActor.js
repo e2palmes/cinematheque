@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {FormNavbar} from "../../components/navbar/FormNavbar";
-import {Actor, Khphotos, recompense} from "./test/Data";
+import {Contenu, Khphotos, recompense} from "./test/Data";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPaperPlane} from "@fortawesome/free-solid-svg-icons/faPaperPlane";
 import {Commentaires} from "../Film/test/Data";
@@ -32,7 +32,7 @@ export const BioActor = () => {
             <FormNavbar/>
 
             <section className="py-6 px-20 w-10/12 max-w-screen-desktop leading-3">
-                <h1 className="mb-3 text-2xl font-black">{Actor.name}</h1>
+                <h1 className="mb-3 text-2xl font-black">{Contenu.name}</h1>
                 <div className="flex space-x-9">
                     <div className="flex flex-col items-center space-y-4">
                         <div className="w-40">
@@ -53,10 +53,10 @@ export const BioActor = () => {
 
                                 </div>
                                 <div className="space-y-4">
-                                    <p>{Actor.Country}</p>
-                                    <p>{Actor.Civil_status}</p>
-                                    <p>{Actor.Birthday}</p>
-                                    <p>{Actor.Age}</p>
+                                    <p>{Contenu.Country}</p>
+                                    <p>{Contenu.Civil_status}</p>
+                                    <p>{Contenu.Birthday}</p>
+                                    <p>{Contenu.Age}</p>
                                 </div>
 
                             </div>
@@ -68,7 +68,7 @@ export const BioActor = () => {
             <section className="py-6 px-20 w-10/12 max-w-screen-desktop">
                 <h1 className="mb-3 text-2xl font-black text-red-600 font-bold">Biographie</h1>
                 <div>
-                    <p>{Actor.Biographie}</p>
+                    <p>{Contenu.Biographie}</p>
 
                 </div>
 

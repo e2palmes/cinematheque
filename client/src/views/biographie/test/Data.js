@@ -1,4 +1,4 @@
-export const Actor = {
+export const Contenu = {
     name:"Kit Harington",
     Civil_status:"Christopher Catesby Harington",
     Country:"Britannique",
