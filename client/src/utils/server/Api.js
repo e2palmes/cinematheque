@@ -23,3 +23,22 @@ export const getUsers =  ()=>{
 export const getActors =  ()=>{
     return  fetch(api+'/acteur').then((response)=>response.json())
 }
+
+export const addActors = async(actorValues, imageFile)=>{
+    const actor = {
+        firstname:actorValues.firstname,
+        lastname:actorValues.lastname,
+        description:actorValues.description,
+        birthdate:new Date(actorValues.birthdate),
+        image:imageFile.imageFile
+    }
+    console.log(actor)
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(actor)
+    }
+    return await fetch(api+'/acteur', requestOptions);
+}

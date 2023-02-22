@@ -9,6 +9,7 @@ import {TextArea} from "../../components/forms/textarea/TextArea";
 import {actorInitialValues, validateActor} from "../../services/constants/admin/constants";
 import {Button} from "../../components/buttons/Button";
 import {Link} from "react-router-dom";
+import { addActors } from "../../utils/server/Api";
 
 
 
@@ -28,7 +29,7 @@ export const AdminActors =()=>{
         console.log("updated");
     }
 
-    return (
+    return (    
         <div className="flex space-x-3 items-start py-12">
             <AdminSidebar/>
             <section className="py-6 px-20 w-full space-y-3 flex flex-col max-w-screen-desktop">
@@ -37,6 +38,7 @@ export const AdminActors =()=>{
                         setSearch={setSearch}
                         search={search}
                 />
+
                 <Link to="/admin/actors/add" className="text-white bg-red-600 p-3 rounded-xl self-start">+ Ajouter un nouveau acteur</Link>
                 <ActorsTable handleDelete={handleDelete} handleUpdate={handleUpdate}/>
             </section>
@@ -49,13 +51,14 @@ export const ActorsAdd = ()=>{
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [message, setMessage] = useState("");
+    const [imageFile, setImageFile] = useState();
 
     const submitHandler = (e)=>{
         e.preventDefault();
 
         if(Object.keys(formErrors).length === 0){
-            console.log(actorValues);
-            console.log("form submitted");
+            
+            addActors(actorValues, imageFile).then(response=>response.json().then(response=>console.log(response)))
         }else{
             setIsSubmit(true);
             setMessage("Vous avez des erreurs dans le formulaire")
@@ -64,9 +67,9 @@ export const ActorsAdd = ()=>{
     }
 
     const handleChange = (e)=>{
-        const {name, value} = e.target;
-        setActorValues({...actorValues,[name]:value});
-
+        const {name, value, files} = e.target
+        setActorValues({...actorValues,[name]:value})
+        setImageFile({imageFile: files[0]})
     }
 
     useEffect(()=>{
@@ -129,7 +132,7 @@ export const ActorsAdd = ()=>{
                                     placeholder="Entrer l'image de l'acteur"
                                     name="image"
                                     type="file"
-                                    values={actorValues.image}
+                            /*         values={actorValues.image.} */
                                     handleChange={handleChange}
                         />
 

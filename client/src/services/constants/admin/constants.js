@@ -3,7 +3,6 @@ export const actorInitialValues = {
     lastname:"",
     description:"",
     birthdate: "",
-    image:""
 }
 
 export const validateActor = (actorValues)=> {
