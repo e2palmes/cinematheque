@@ -27,20 +27,23 @@ export const getActors =  ()=>{
 }
 
 export const addActor = async(actorValues, imageFile)=>{
-    const actor = {
-        firstname:actorValues.firstname,
-        lastname:actorValues.lastname,
-        description:actorValues.description,
-        birthdate:new Date(actorValues.birthdate),
-        image:  await toBase64(imageFile.imageFile) && ""
-    }
-        
+    
     const requestOptions = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(actor)
+        body: JSON.stringify(
+            toBase64(imageFile.imageFile).then((result)=>{
+                return  {
+                    firstname:actorValues.firstname,
+                    lastname:actorValues.lastname,
+                    description:actorValues.description,
+                    birthdate:new Date(actorValues.birthdate),
+                    image:  result && ""
+                }
+            })
+        )
     }
     return await fetch(api+'/acteur', requestOptions);
 }
@@ -50,7 +53,7 @@ export const getDirectors =  ()=>{
 }
 
 export const addDirector = async(actorValues, imageFile)=>{
-    const director = {
+  /*   const director = {
         firstname:actorValues.firstname,
         lastname:actorValues.lastname,
         description:actorValues.description,
@@ -64,7 +67,7 @@ export const addDirector = async(actorValues, imageFile)=>{
         },
         body: JSON.stringify(director)
     }
-    return await fetch(api+'/director', requestOptions);
+    return await fetch(api+'/director', requestOptions); */
 }
 
 export const getFilms =  ()=>{
