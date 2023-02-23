@@ -30,9 +30,10 @@ export const addActors = async(actorValues, imageFile)=>{
         lastname:actorValues.lastname,
         description:actorValues.description,
         birthdate:new Date(actorValues.birthdate),
-        image:imageFile.imageFile
+        image: imageFile && ""
     }
-    console.log(actor)
+
+    console.log(imageFile)
     const requestOptions = {
         method: 'POST',
         headers: {
