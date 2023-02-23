@@ -57,6 +57,7 @@ export const ActorsAdd = ()=>{
         e.preventDefault();
 
         if(Object.keys(formErrors).length === 0){
+
             addActors(actorValues, imageFile).then(response=>response.json()).then(response=>console.log(response))
         }else{
             setIsSubmit(true);
