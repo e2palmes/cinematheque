@@ -1,17 +1,22 @@
 import {Links} from "./Links";
-import {actorsData, usersData, filmsData, directorsData} from "../table/admin/constants";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {fetchAllUsers} from "../../reducers/usersReducer";
 import {fetchAllActors} from "../../reducers/actorsReducer";
+import { fetchAllDirectors } from "../../reducers/directorsReducer";
+import { fetchAllFilms } from "../../reducers/filmsReducer";
 
 export const AdminSidebar = ()=>{
     const {allUsers} = useSelector((state)=>state.users)
     const {allActors} = useSelector((state)=>state.actors)
+    const {allDirectors} = useSelector((state)=>state.directors)
+    const {allFilms} = useSelector((state)=>state.films)
     const dispatch = useDispatch()
     useEffect(()=>{
         dispatch(fetchAllUsers())
         dispatch(fetchAllActors())
+        dispatch(fetchAllDirectors())
+        dispatch(fetchAllFilms())
     },[])
     return(
         <section className="h-full px-3 py-4">
@@ -30,8 +35,8 @@ export const AdminSidebar = ()=>{
                     </li>
                     <Links name="users" title="Utilisateurs" count={allUsers.length}/>
                     <Links name="actors" title="Acteurs" count={allActors.length}/>
-                    <Links name="films" title="Filmographie" count={filmsData.length}/>
-                    <Links name="directors" title="Réalisateurs" count={directorsData.length}/>
+                    <Links name="films" title="Filmographie" count={allFilms.length}/>
+                    <Links name="directors" title="Réalisateurs" count={allDirectors.length}/>
                     <Links name="display_home_page" title="Elements acceuil"/>
                 </ul>
             </section>

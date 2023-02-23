@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 
 export const Button = (props)=>{
-        const {text, color, type, size} = props;
+        const {text, color, type, size, route} = props;
         let submit = false;
         let link = false;
         let normal =false;
@@ -51,13 +52,7 @@ export const Button = (props)=>{
             }
 
             {link &&
-                <button className={buttonClass}
-                        type="button"
-
-                >
-                    <a href="#">{text}</a>
-                </button>
-
+                <Link to={route} className={buttonClass} >{text}</Link>
             }
             {
                 normal &&

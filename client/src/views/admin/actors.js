@@ -9,7 +9,7 @@ import {TextArea} from "../../components/forms/textarea/TextArea";
 import {actorInitialValues, validateActor} from "../../services/constants/admin/constants";
 import {Button} from "../../components/buttons/Button";
 import {Link} from "react-router-dom";
-import { addActors } from "../../utils/server/Api";
+import { addActor } from "../../utils/server/Api";
 
 
 
@@ -58,7 +58,7 @@ export const ActorsAdd = ()=>{
 
         if(Object.keys(formErrors).length === 0){
 
-            addActors(actorValues, imageFile).then(response=>response.json()).then(response=>console.log(response))
+            addActor(actorValues, imageFile).then(response=>response.json()).then(response=>console.log(response))
         }else{
             setIsSubmit(true);
             setMessage("Vous avez des erreurs dans le formulaire")
@@ -80,7 +80,7 @@ export const ActorsAdd = ()=>{
          <div className="mx-5 py-12 my-0 flex flex-col items-center">
             <section className="py-6 px-20">
                 <h1 className="text-5xl mb-8 font-extrabold ">
-                    Ajouter un film
+                    Ajouter un acteur
                 </h1>
                  {isSubmit &&
                     <div
@@ -135,11 +135,19 @@ export const ActorsAdd = ()=>{
                             /*         values={actorValues.image.} */
                                     handleChange={handleChange}
                         />
+                        <div className="flex space-x-3 items-center">
 
                          <Button text="Valider"
                                 color="white"
                                 type="submit"
                         />
+                         <Button text="Annuler"
+                                color="red"
+                                type="link"
+                                route="/admin/actors"
+                        />
+
+                        </div>
                     </div>
                 </form>
             </section>
