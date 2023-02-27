@@ -9,6 +9,8 @@ import {Admin} from "./views/admin/admin";
 import {AdminUsers} from "./views/admin/users";
 import {ActorsAdd, AdminActors} from "./views/admin/actors";
 import {BioActor} from "./views/biographie/BioActor";
+import {BioRealisateur} from "./views/biographie/BioRealisateur";
+
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
                 <Route path="/admin/directors" element={<Admin/>}/>
                 <Route path="/admin/home_elements" element={<Admin/>}/>
                 <Route path="*" element={<h1>Error 404 page not found</h1>}/>
+                <Route path="BioRealisateur" element={<BioRealisateur/>}/>
+
             </Routes>
         </Router>
     );

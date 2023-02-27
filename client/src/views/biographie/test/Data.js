@@ -28,7 +28,18 @@ export const KhPhotos =[
         photo:"/assests/images/KH4.jpeg"
 
     },
+
+
 ]
+
+export const staticdata= {
+    name:"joss whedom",
+    Civil_status:"Joseph Hill Whedom",
+    Country:"Americain",
+    Birthday:"23 Juin 1964( New-York Etats-unies)",
+    Age:"58",
+    
+}
 
 
 

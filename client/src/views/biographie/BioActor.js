@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import {FormNavbar} from "../../components/navbar/FormNavbar";
-import {Contenu, KhPhotos} from "./test/Data";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPaperPlane} from "@fortawesome/free-solid-svg-icons/faPaperPlane";
-import {Commentaires} from "../Film/test/Data";
+import React, { useState } from "react";
+import { FormNavbar } from "../../components/navbar/FormNavbar";
+import { Contenu, KhPhotos } from "./test/Data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
+import { Commentaires } from "../Film/test/Data";
 
 
 
@@ -11,13 +11,13 @@ export const BioActor = () => {
 
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState(Commentaires);
-    const submitHandler = (e)=>{
+    const submitHandler = (e) => {
         e.preventDefault();
 
         Commentaires.push(
             {
-                name:"this test user",
-                image:"/assets/images/avatar1.png",
+                name: "this test user",
+                image: "/assets/images/avatar1.png",
                 commentaire: comment
             }
         );
@@ -26,17 +26,17 @@ export const BioActor = () => {
         setComments(Commentaires);
     }
 
-    return(
+    return (
         <div className="mx-5 py-12 my-0 flex flex-col items-center space-y-5">
             {/*Navbar*/}
-            <FormNavbar/>
+            <FormNavbar />
 
             <section className="py-6 px-20 w-10/12 max-w-screen-desktop leading-3">
                 <h1 className="mb-3 text-2xl font-black">{Contenu.name}</h1>
                 <div className="flex space-x-9">
                     <div className="flex flex-col items-center space-y-4">
                         <div className="w-40">
-                            <img className="object-fill w-48 h-52 rounded-lg" src="/assets/images/KitHarington.jpeg" alt="KH"/>
+                            <img className="object-fill w-48 h-52 rounded-lg" src="/assets/images/KitHarington.jpeg" alt="KH" />
                         </div>
 
                     </div>
@@ -64,7 +64,7 @@ export const BioActor = () => {
                     </div>
                 </div>
             </section>
-        {/*    biographie section*/}
+            {/*    biographie section*/}
             <section className="py-6 px-20 w-10/12 max-w-screen-desktop">
                 <h1 className="mb-3 text-2xl font-black text-red-600 font-bold">Biographie</h1>
                 <div>
@@ -74,15 +74,15 @@ export const BioActor = () => {
 
             </section>
 
-        {/*    photo section*/}
+            {/*    photo section*/}
             <section className="py-6 px-20 w-10/12 max-w-screen-desktop">
                 <h1 className="mb-3 text-2xl font-black text-red-600 font-bold">Photos</h1>
 
                 <div className="flex flex-wrap -mr-12">
-                    {KhPhotos.map(({photo})=>{
-                        return(
+                    {KhPhotos.map(({ photo }) => {
+                        return (
                             <div className="mb-4 ml-10">
-                                <img className="object-fill w-32 h-36 rounded-md" src={photo} alt="KH photos"/>
+                                <img className="object-fill w-32 h-36 rounded-md" src={photo} alt="KH photos" />
                             </div>
 
                         );
@@ -105,11 +105,11 @@ export const BioActor = () => {
             <section className="py-6 px-20 w-10/12 max-w-screen-desktop">
                 <h1 className="mb-3 text-2xl font-black text-red-600 font-bold">Commentaires</h1>
                 {
-                    comments.map(({name,image,commentaire})=>{
+                    comments.map(({ name, image, commentaire }) => {
                         return (
                             <div className="flex mb-4 space-x-2">
                                 <div>
-                                    <img className="object-fill w-10 h-10 rounded-full" src={image} alt="user"/>
+                                    <img className="object-fill w-10 h-10 rounded-full" src={image} alt="user" />
                                 </div>
 
                                 <div className="flex flex-col">
@@ -123,14 +123,14 @@ export const BioActor = () => {
                 }
 
                 <form className="flex mx-10" onSubmit={submitHandler}>
-                        <textarea className="appearance-none bg-transparent border-b-2 border-white w-full max-w-2xl text-slate-100 mr-2 py-1 px-2 focus:outline-none"
-                                  placeholder="écrire un commentaire"
-                                  rows="2"
-                                  value={comment}
-                                  onChange={(e)=>setComment(e.target.value)}
-                        ></textarea>
+                    <textarea className="appearance-none bg-transparent border-b-2 border-white w-full max-w-2xl text-slate-100 mr-2 py-1 px-2 focus:outline-none"
+                        placeholder="écrire un commentaire"
+                        rows="2"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                    ></textarea>
                     <button type="submit">
-                        <FontAwesomeIcon icon={faPaperPlane}/>
+                        <FontAwesomeIcon icon={faPaperPlane} />
                     </button>
                 </form>
 

@@ -21,6 +21,10 @@ export const LandingPage = (props) => {
                 <Link to="/BioActor" className="text-red-600 hover:underline">Biographie acteur</Link>
             </p>
 
+            <p className="mt-7">
+                <Link to="/BioRealisateur" className="text-red-600 hover:underline">BioRealisateur</Link>
+            </p>
+
         </div>
 
 
